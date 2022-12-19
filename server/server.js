@@ -5,7 +5,7 @@ const app = express()
 const port = process.env.PORT || 3001;
 
 app.get("/getRestaurants", (req, res) => {
-    res.json ({
+    res.status(404).json ({
         status: "success",
         restaurant: "mcdonalds",
     });
