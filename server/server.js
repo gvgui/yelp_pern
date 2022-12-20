@@ -1,12 +1,14 @@
 const express = require("express");
 const morgan = require("morgan");
+const db = require("./db");
 const app = express();
 
 app.use((express.json()));
 
 //Gets All Restaurants
-app.get("/api/v1/restaurants", (req, res) => {
-    console.log("route handler ran");
+app.get("/api/v1/restaurants", async (req, res) => {
+    const results = await db.query('SELECT * FROM restaurants');
+    console.log(results);
     res.status(200).json ({
         status: "success",
         data: {
