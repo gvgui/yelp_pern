@@ -66,15 +66,26 @@ app.post("/api/v1/restaurants", async (req, res) => {
 });
 
 //Update a Restaurant
-app.put("/api/v1/restaurants/:id", (req, res) => {
-    console.log(req.params.id);
-    console.log(req.body);
-    res.status(200).json ({
-        status: "success",
-        data: {
-            restaurant: "mcdonalds"
-        }
-    });
+app.put("/api/v1/restaurants/:id", async (req, res) => {
+    try {
+        const results = await db.query(`UPDATE restaurants SET name = $1, location = $2, price_range = $3 WHERE id = $4 returning *`, [
+            req.body.name,
+            req.body.location,
+            req.body.price_range,
+            req.params.id
+        ]);
+        res.status(200).json({
+            status: "success",
+            data: {
+                restaurant: results.rows[0]
+            }
+        });
+    } catch (err) {
+        res.status(500).json ({
+            status: "fail"
+        });
+        console.log(err); 
+    }
 });
 
 //Delete a Restaurant
