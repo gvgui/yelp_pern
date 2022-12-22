@@ -1,3 +1,6 @@
+/**
+ * This is the backend server that uses express for CRUD operations
+ */
 const express = require("express");
 const morgan = require("morgan");
 const db = require("./db");

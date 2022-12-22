@@ -1,3 +1,6 @@
+/**
+ * This provides a base api using axios
+ */
 import axios from 'axios';
 
 export default axios.create({

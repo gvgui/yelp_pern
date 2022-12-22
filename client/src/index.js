@@ -1,3 +1,6 @@
+/**
+ * This is the index.js file that renders the React application
+ */
 import React from 'react';
 //import ReactDOM from 'react-dom';
 import App from './App';

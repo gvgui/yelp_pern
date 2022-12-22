@@ -1,3 +1,6 @@
+/**
+ * This is the component that renders the restaurant list on the home page
+ */
 import React, { useEffect, useContext } from 'react';
 import RestaurantFinder from '../apis/RestaurantFinder';
 import { RestaurantsContext } from '../context/RestaurantsContext';
