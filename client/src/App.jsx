@@ -23,7 +23,7 @@ const App = () => {
                     <Routes> 
                         <Route exact path="/" element={<Home/>} /> 
                         <Route
-                        path="/restaurants/:id/update"
+                        exact path="/restaurants/:id/update"
                         element={<UpdatePage/>} 
                         /> 
                         <Route
