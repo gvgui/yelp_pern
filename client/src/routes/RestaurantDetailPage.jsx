@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import RestaurantFinder from '../apis/RestaurantFinder';
+import StarRating from '../components/StarRating';
 import { RestaurantsContext } from '../context/RestaurantsContext';
 
 const RestaurantDetailPage = () => {
@@ -23,7 +24,7 @@ const RestaurantDetailPage = () => {
   }, [])
   return (
     <div>
-        <h1 className="text-center">{selectedRestaurant && selectedRestaurant.name}</h1>
+        <h1 className="font-weight-light display-1 text-center">{selectedRestaurant && <StarRating rating={1.2} />}</h1>
     </div>
   )
 }
