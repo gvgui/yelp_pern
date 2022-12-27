@@ -26,7 +26,7 @@ const RestaurantDetailPage = () => {
   }, [])
   return (
     <div>
-        <h1 className="font-weight-light display-1 text-center">{selectedRestaurant && selectedRestaurant.name}</h1>
+        <h1 className="font-weight-light display-1 text-center">{selectedRestaurant && selectedRestaurant.restaurant.name}</h1>
         <div>{selectedRestaurant && (
           <>
           <div className="mt-3">
