@@ -19,12 +19,14 @@ const AddReview = () => {
                 review: reviewText,
                 rating
             });
-            //navigate("/");
-            //navigate(location.pathname);
             window.location.reload();
         } catch (err) {
             console.log(err);
         }
+    }
+
+    const goHome = () => {
+        navigate("/");
     }
 
   return (
@@ -64,7 +66,10 @@ const AddReview = () => {
                 id="Review" 
                 className="form-control"></textarea>
             </div>
-            <button type="submit" onClick={handleSubmitReview} className="btn btn-primary">Submit</button>
+            <div className="form-row">
+                <button type="submit" onClick={handleSubmitReview} className="btn btn-primary">Submit</button>
+                <button type="submit" onClick={goHome} className="btn btn-primary">Home</button>
+            </div>
         </form>
     </div>
   )
